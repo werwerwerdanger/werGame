@@ -1,0 +1,3064 @@
+{
+  "MusicMap": [
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 0,
+      "endtime": 208,
+      "measureID": 1,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode1",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 208,
+      "endtime": 417,
+      "measureID": 1,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode2",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 417,
+      "endtime": 625,
+      "measureID": 1,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode3",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 625,
+      "endtime": 833,
+      "measureID": 1,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode4",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 833,
+      "endtime": 1250,
+      "measureID": 1,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode5",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 1042,
+      "endtime": 1250,
+      "measureID": 1,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode6",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 1250,
+      "endtime": 1458,
+      "measureID": 1,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode7",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 1458,
+      "endtime": 1667,
+      "measureID": 1,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode8",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 1667,
+      "endtime": 1875,
+      "measureID": 2,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode9",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 1875,
+      "endtime": 2083,
+      "measureID": 2,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode10",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 2083,
+      "endtime": 2292,
+      "measureID": 2,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode11",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 2292,
+      "endtime": 2708,
+      "measureID": 2,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode12",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 2500,
+      "endtime": 2917,
+      "measureID": 2,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode13",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 2708,
+      "endtime": 2812,
+      "measureID": 2,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode14",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 2812,
+      "endtime": 2917,
+      "measureID": 2,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode15",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 2917,
+      "endtime": 3125,
+      "measureID": 2,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode16",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 3125,
+      "endtime": 3333,
+      "measureID": 2,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode17",
+      "endPointOrNot": 1,
+      "segmentID": 1,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -570,
+        350,
+        -570,
+        -200
+      ],
+      "starttime": 3333,
+      "endtime": 3542,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode18",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -500,
+        350,
+        -500,
+        -200
+      ],
+      "starttime": 3542,
+      "endtime": 3646,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode19",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 3646,
+      "endtime": 3750,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode20",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -360,
+        350,
+        -360,
+        -200
+      ],
+      "starttime": 3750,
+      "endtime": 3958,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode21",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -290,
+        350,
+        -290,
+        -200
+      ],
+      "starttime": 3958,
+      "endtime": 4167,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode22",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -220,
+        350,
+        -220,
+        -200
+      ],
+      "starttime": 4167,
+      "endtime": 4375,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode23",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -150,
+        350,
+        -150,
+        -200
+      ],
+      "starttime": 4375,
+      "endtime": 4479,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode24",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -80,
+        350,
+        -80,
+        -200
+      ],
+      "starttime": 4479,
+      "endtime": 4583,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode25",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -10,
+        350,
+        -10,
+        -200
+      ],
+      "starttime": 4583,
+      "endtime": 4792,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode26",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        60,
+        350,
+        60,
+        -200
+      ],
+      "starttime": 4792,
+      "endtime": 5000,
+      "measureID": 3,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode27",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        130,
+        350,
+        130,
+        -200
+      ],
+      "starttime": 5000,
+      "endtime": 5208,
+      "measureID": 4,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode28",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        200,
+        350,
+        200,
+        -200
+      ],
+      "starttime": 5208,
+      "endtime": 5417,
+      "measureID": 4,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode29",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        270,
+        350,
+        270,
+        -200
+      ],
+      "starttime": 5417,
+      "endtime": 5625,
+      "measureID": 4,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode30",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        340,
+        350,
+        340,
+        -200
+      ],
+      "starttime": 5625,
+      "endtime": 5833,
+      "measureID": 4,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode31",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 5833,
+      "endtime": 6042,
+      "measureID": 4,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode32",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        480,
+        350,
+        480,
+        -200
+      ],
+      "starttime": 6042,
+      "endtime": 6250,
+      "measureID": 4,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode33",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        550,
+        350,
+        550,
+        -200
+      ],
+      "starttime": 6458,
+      "endtime": 6667,
+      "measureID": 4,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode34",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -570,
+        350,
+        -570,
+        -200
+      ],
+      "starttime": 6667,
+      "endtime": 6875,
+      "measureID": 5,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode35",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -500,
+        350,
+        -500,
+        -200
+      ],
+      "starttime": 6875,
+      "endtime": 7083,
+      "measureID": 5,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode36",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 7083,
+      "endtime": 7292,
+      "measureID": 5,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode37",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -360,
+        350,
+        -360,
+        -200
+      ],
+      "starttime": 7292,
+      "endtime": 7500,
+      "measureID": 5,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode38",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -290,
+        350,
+        -290,
+        -200
+      ],
+      "starttime": 7500,
+      "endtime": 7708,
+      "measureID": 5,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode39",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -220,
+        350,
+        -220,
+        -200
+      ],
+      "starttime": 7708,
+      "endtime": 7917,
+      "measureID": 5,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode40",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -150,
+        350,
+        -150,
+        -200
+      ],
+      "starttime": 7917,
+      "endtime": 8125,
+      "measureID": 5,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode41",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -80,
+        350,
+        -80,
+        -200
+      ],
+      "starttime": 8125,
+      "endtime": 8333,
+      "measureID": 5,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode42",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -10,
+        350,
+        -10,
+        -200
+      ],
+      "starttime": 8333,
+      "endtime": 8542,
+      "measureID": 6,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode43",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        60,
+        350,
+        60,
+        -200
+      ],
+      "starttime": 8542,
+      "endtime": 8750,
+      "measureID": 6,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode44",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        130,
+        350,
+        130,
+        -200
+      ],
+      "starttime": 8750,
+      "endtime": 8854,
+      "measureID": 6,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode45",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        200,
+        350,
+        200,
+        -200
+      ],
+      "starttime": 8854,
+      "endtime": 8958,
+      "measureID": 6,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode46",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        270,
+        350,
+        270,
+        -200
+      ],
+      "starttime": 8958,
+      "endtime": 9167,
+      "measureID": 6,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode47",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        340,
+        350,
+        340,
+        -200
+      ],
+      "starttime": 9167,
+      "endtime": 9375,
+      "measureID": 6,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode48",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 9375,
+      "endtime": 9583,
+      "measureID": 6,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode49",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        480,
+        350,
+        480,
+        -200
+      ],
+      "starttime": 9583,
+      "endtime": 9792,
+      "measureID": 6,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode50",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        550,
+        350,
+        550,
+        -200
+      ],
+      "starttime": 9792,
+      "endtime": 10000,
+      "measureID": 6,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode51",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -570,
+        350,
+        -570,
+        -200
+      ],
+      "starttime": 10000,
+      "endtime": 10208,
+      "measureID": 7,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode52",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -500,
+        350,
+        -500,
+        -200
+      ],
+      "starttime": 10208,
+      "endtime": 10417,
+      "measureID": 7,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode53",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 10417,
+      "endtime": 10625,
+      "measureID": 7,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode54",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -360,
+        350,
+        -360,
+        -200
+      ],
+      "starttime": 10625,
+      "endtime": 10833,
+      "measureID": 7,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode55",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -290,
+        350,
+        -290,
+        -200
+      ],
+      "starttime": 10833,
+      "endtime": 11042,
+      "measureID": 7,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode56",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -220,
+        350,
+        -220,
+        -200
+      ],
+      "starttime": 11042,
+      "endtime": 11250,
+      "measureID": 7,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode57",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -150,
+        350,
+        -150,
+        -200
+      ],
+      "starttime": 11250,
+      "endtime": 11458,
+      "measureID": 7,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode58",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -80,
+        350,
+        -80,
+        -200
+      ],
+      "starttime": 11458,
+      "endtime": 11667,
+      "measureID": 7,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode59",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -10,
+        350,
+        -10,
+        -200
+      ],
+      "starttime": 11667,
+      "endtime": 11875,
+      "measureID": 8,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode60",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        60,
+        350,
+        60,
+        -200
+      ],
+      "starttime": 11875,
+      "endtime": 12083,
+      "measureID": 8,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode61",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        130,
+        350,
+        130,
+        -200
+      ],
+      "starttime": 12083,
+      "endtime": 12188,
+      "measureID": 8,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode62",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        200,
+        350,
+        200,
+        -200
+      ],
+      "starttime": 12188,
+      "endtime": 12292,
+      "measureID": 8,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode63",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        270,
+        350,
+        270,
+        -200
+      ],
+      "starttime": 12292,
+      "endtime": 12500,
+      "measureID": 8,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode64",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        340,
+        350,
+        340,
+        -200
+      ],
+      "starttime": 12500,
+      "endtime": 12708,
+      "measureID": 8,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode65",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 12708,
+      "endtime": 12917,
+      "measureID": 8,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode66",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        480,
+        350,
+        480,
+        -200
+      ],
+      "starttime": 12917,
+      "endtime": 13125,
+      "measureID": 8,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode67",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        550,
+        350,
+        550,
+        -200
+      ],
+      "starttime": 13125,
+      "endtime": 13333,
+      "measureID": 8,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode68",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -570,
+        350,
+        -570,
+        -200
+      ],
+      "starttime": 13333,
+      "endtime": 13542,
+      "measureID": 9,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode69",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -500,
+        350,
+        -500,
+        -200
+      ],
+      "starttime": 13542,
+      "endtime": 13750,
+      "measureID": 9,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode70",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 13750,
+      "endtime": 13958,
+      "measureID": 9,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode71",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -360,
+        350,
+        -360,
+        -200
+      ],
+      "starttime": 13958,
+      "endtime": 14167,
+      "measureID": 9,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode72",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -290,
+        350,
+        -290,
+        -200
+      ],
+      "starttime": 14167,
+      "endtime": 14375,
+      "measureID": 9,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode73",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -220,
+        350,
+        -220,
+        -200
+      ],
+      "starttime": 14375,
+      "endtime": 14583,
+      "measureID": 9,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode74",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -150,
+        350,
+        -150,
+        -200
+      ],
+      "starttime": 14583,
+      "endtime": 14792,
+      "measureID": 9,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode75",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -80,
+        350,
+        -80,
+        -200
+      ],
+      "starttime": 14792,
+      "endtime": 15000,
+      "measureID": 9,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode76",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -10,
+        350,
+        -10,
+        -200
+      ],
+      "starttime": 15000,
+      "endtime": 15208,
+      "measureID": 10,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode77",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        60,
+        350,
+        60,
+        -200
+      ],
+      "starttime": 15208,
+      "endtime": 15417,
+      "measureID": 10,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode78",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        130,
+        350,
+        130,
+        -200
+      ],
+      "starttime": 15417,
+      "endtime": 15521,
+      "measureID": 10,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode79",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        200,
+        350,
+        200,
+        -200
+      ],
+      "starttime": 15521,
+      "endtime": 15625,
+      "measureID": 10,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode80",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        270,
+        350,
+        270,
+        -200
+      ],
+      "starttime": 15625,
+      "endtime": 15833,
+      "measureID": 10,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode81",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        340,
+        350,
+        340,
+        -200
+      ],
+      "starttime": 15833,
+      "endtime": 16042,
+      "measureID": 10,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode82",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 16042,
+      "endtime": 16250,
+      "measureID": 10,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode83",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        480,
+        350,
+        480,
+        -200
+      ],
+      "starttime": 16250,
+      "endtime": 16458,
+      "measureID": 10,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode84",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        550,
+        350,
+        550,
+        -200
+      ],
+      "starttime": 16458,
+      "endtime": 16667,
+      "measureID": 10,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode85",
+      "endPointOrNot": 1,
+      "segmentID": 2,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 16667,
+      "endtime": 16875,
+      "measureID": 11,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode86",
+      "endPointOrNot": 1,
+      "segmentID": 3,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 16875,
+      "endtime": 17083,
+      "measureID": 11,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode87",
+      "endPointOrNot": 1,
+      "segmentID": 3,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 17083,
+      "endtime": 17292,
+      "measureID": 11,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode88",
+      "endPointOrNot": 1,
+      "segmentID": 3,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 17292,
+      "endtime": 17500,
+      "measureID": 11,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode89",
+      "endPointOrNot": 1,
+      "segmentID": 3,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 17500,
+      "endtime": 17604,
+      "measureID": 11,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode90",
+      "endPointOrNot": 1,
+      "segmentID": 3,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 17708,
+      "endtime": 17812,
+      "measureID": 11,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode91",
+      "endPointOrNot": 1,
+      "segmentID": 3,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 18333,
+      "endtime": 18542,
+      "measureID": 12,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode92",
+      "endPointOrNot": 1,
+      "segmentID": 4,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 18542,
+      "endtime": 18750,
+      "measureID": 12,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode93",
+      "endPointOrNot": 1,
+      "segmentID": 4,
+      "note_count": 4
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 18750,
+      "endtime": 18958,
+      "measureID": 12,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode94",
+      "endPointOrNot": 1,
+      "segmentID": 4,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 18958,
+      "endtime": 19167,
+      "measureID": 12,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode95",
+      "endPointOrNot": 1,
+      "segmentID": 4,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 19167,
+      "endtime": 19375,
+      "measureID": 12,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode96",
+      "endPointOrNot": 1,
+      "segmentID": 4,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 19375,
+      "endtime": 19583,
+      "measureID": 12,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode97",
+      "endPointOrNot": 1,
+      "segmentID": 4,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 19583,
+      "endtime": 19792,
+      "measureID": 12,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode98",
+      "endPointOrNot": 1,
+      "segmentID": 4,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 19792,
+      "endtime": 20000,
+      "measureID": 12,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode99",
+      "endPointOrNot": 1,
+      "segmentID": 4,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 20000,
+      "endtime": 20208,
+      "measureID": 13,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode100",
+      "endPointOrNot": 1,
+      "segmentID": 5,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 20208,
+      "endtime": 20417,
+      "measureID": 13,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode101",
+      "endPointOrNot": 1,
+      "segmentID": 5,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 20417,
+      "endtime": 20625,
+      "measureID": 13,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode102",
+      "endPointOrNot": 1,
+      "segmentID": 5,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 20625,
+      "endtime": 20833,
+      "measureID": 13,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode103",
+      "endPointOrNot": 1,
+      "segmentID": 5,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 20833,
+      "endtime": 21042,
+      "measureID": 13,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode104",
+      "endPointOrNot": 1,
+      "segmentID": 5,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 21042,
+      "endtime": 21250,
+      "measureID": 13,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode105",
+      "endPointOrNot": 1,
+      "segmentID": 5,
+      "note_count": 4
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 21250,
+      "endtime": 21458,
+      "measureID": 13,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode106",
+      "endPointOrNot": 1,
+      "segmentID": 5,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 21458,
+      "endtime": 21667,
+      "measureID": 13,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode107",
+      "endPointOrNot": 1,
+      "segmentID": 5,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 21667,
+      "endtime": 21875,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode108",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 21875,
+      "endtime": 22083,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode109",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 22083,
+      "endtime": 22292,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode110",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 22292,
+      "endtime": 22500,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode111",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 4
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 22500,
+      "endtime": 22708,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode112",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 22708,
+      "endtime": 22917,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode113",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 22812,
+      "endtime": 22917,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode114",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 22917,
+      "endtime": 23021,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode115",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 23021,
+      "endtime": 23125,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode116",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 23125,
+      "endtime": 23333,
+      "measureID": 14,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode117",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 23333,
+      "endtime": 23542,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode118",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 23438,
+      "endtime": 23542,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode119",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 23542,
+      "endtime": 23750,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode120",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 23646,
+      "endtime": 23750,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode121",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 23750,
+      "endtime": 23958,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode122",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 23958,
+      "endtime": 24167,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode123",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 24167,
+      "endtime": 24375,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode124",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 24375,
+      "endtime": 24583,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode125",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 24583,
+      "endtime": 25000,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode126",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 24792,
+      "endtime": 25000,
+      "measureID": 15,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode127",
+      "endPointOrNot": 1,
+      "segmentID": 6,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 25000,
+      "endtime": 25208,
+      "measureID": 16,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode128",
+      "endPointOrNot": 1,
+      "segmentID": 7,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 25208,
+      "endtime": 25417,
+      "measureID": 16,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode129",
+      "endPointOrNot": 1,
+      "segmentID": 7,
+      "note_count": 4
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 25417,
+      "endtime": 25625,
+      "measureID": 16,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode130",
+      "endPointOrNot": 1,
+      "segmentID": 7,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 25625,
+      "endtime": 25833,
+      "measureID": 16,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode131",
+      "endPointOrNot": 1,
+      "segmentID": 7,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 25833,
+      "endtime": 26042,
+      "measureID": 16,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode132",
+      "endPointOrNot": 1,
+      "segmentID": 7,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 26042,
+      "endtime": 26250,
+      "measureID": 16,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode133",
+      "endPointOrNot": 1,
+      "segmentID": 7,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 26250,
+      "endtime": 26458,
+      "measureID": 16,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode134",
+      "endPointOrNot": 1,
+      "segmentID": 7,
+      "note_count": 3
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 26458,
+      "endtime": 26667,
+      "measureID": 16,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode135",
+      "endPointOrNot": 1,
+      "segmentID": 7,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -570,
+        350,
+        -570,
+        -200
+      ],
+      "starttime": 26667,
+      "endtime": 26875,
+      "measureID": 17,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode136",
+      "endPointOrNot": 1,
+      "segmentID": 8,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -500,
+        350,
+        -500,
+        -200
+      ],
+      "starttime": 26875,
+      "endtime": 27083,
+      "measureID": 17,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode137",
+      "endPointOrNot": 1,
+      "segmentID": 8,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 27083,
+      "endtime": 27292,
+      "measureID": 17,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode138",
+      "endPointOrNot": 1,
+      "segmentID": 8,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -360,
+        350,
+        -360,
+        -200
+      ],
+      "starttime": 27292,
+      "endtime": 27500,
+      "measureID": 17,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode139",
+      "endPointOrNot": 1,
+      "segmentID": 8,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -290,
+        350,
+        -290,
+        -200
+      ],
+      "starttime": 27500,
+      "endtime": 27708,
+      "measureID": 17,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode140",
+      "endPointOrNot": 1,
+      "segmentID": 8,
+      "note_count": 4
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -220,
+        350,
+        -220,
+        -200
+      ],
+      "starttime": 27708,
+      "endtime": 27917,
+      "measureID": 17,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode141",
+      "endPointOrNot": 1,
+      "segmentID": 8,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -150,
+        350,
+        -150,
+        -200
+      ],
+      "starttime": 27917,
+      "endtime": 28125,
+      "measureID": 17,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode142",
+      "endPointOrNot": 1,
+      "segmentID": 8,
+      "note_count": 4
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -80,
+        350,
+        -80,
+        -200
+      ],
+      "starttime": 28125,
+      "endtime": 28333,
+      "measureID": 17,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode143",
+      "endPointOrNot": 1,
+      "segmentID": 8,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 28333,
+      "endtime": 28542,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode144",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 5
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 28542,
+      "endtime": 28750,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode145",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 28750,
+      "endtime": 28958,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode146",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 4
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 28958,
+      "endtime": 29167,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode147",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 29062,
+      "endtime": 29167,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode148",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 29167,
+      "endtime": 29375,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode149",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 29271,
+      "endtime": 29375,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode150",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 1
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 29375,
+      "endtime": 29583,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode151",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        -430,
+        350,
+        -430,
+        -200
+      ],
+      "starttime": 29583,
+      "endtime": 29792,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode152",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 2
+    },
+    {
+      "Note": "tap",
+      "keypoint": [
+        410,
+        350,
+        410,
+        -200
+      ],
+      "starttime": 29688,
+      "endtime": 29792,
+      "measureID": 18,
+      "Opacity": 255,
+      "touchornot": 1,
+      "startPointOrNot": 0,
+      "middlePointOrNot": 0,
+      "endpointname": "EndNode153",
+      "endPointOrNot": 1,
+      "segmentID": 9,
+      "note_count": 1
+    }
+  ]
+}
