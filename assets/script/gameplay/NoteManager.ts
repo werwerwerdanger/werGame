@@ -13,9 +13,9 @@ const NOTE_IMG: Record<NoteKind, string> = {
     flick: 'NoteImage/Flick/spriteFrame',
     drag: 'NoteImage/Drag/spriteFrame',
 };
-// 关键点贴图：起点/中间点用 endimage，落点用 startimage（沿用旧 MyPool 映射）
+// 关键点贴图：起点/中间点/落点 统一用一张材质（endimage）
 const KP_BODY = 'keypointimage/endimage/spriteFrame';
-const KP_END = 'keypointimage/startimage/spriteFrame';
+const KP_END = KP_BODY;
 
 export class NoteManager {
     private parent: Node;
@@ -31,7 +31,7 @@ export class NoteManager {
 
     /** 预加载所有用到的 spriteframe（异步），完成后 loaded=true */
     preload(): Promise<void> {
-        const paths = [...Object.values(NOTE_IMG), KP_BODY, KP_END];
+        const paths = [...Object.keys(NOTE_IMG).map(k => NOTE_IMG[k as NoteKind]), KP_BODY, KP_END];
         return Promise.all(paths.map(p => this.loadFrame(p))).then(() => {
             this.loaded = true;
         });
@@ -94,6 +94,15 @@ export class NoteManager {
             middleNodes.push(m);
         }
 
+        // 每 note 独立的落点关键点：带角度、不依赖共享 EndNode（共享节点不能按 note 转角）
+        const last = skp.length - 2;
+        let endKeyNode: Node | null = null;
+        if (p.endPointOrNot) {
+            endKeyNode = this.getKeyNode(true);
+            endKeyNode.setParent(this.parent);
+            endKeyNode.position.set(skp[last], skp[last + 1], 0);
+        }
+
         if (!trackOn) {
             // 关闭轨道显示：关键点保持透明
             const hide = (n: Node) => { const s = n.getComponent(Sprite); if (s) s.color = new Color(255, 255, 255, 0); };
@@ -109,7 +118,13 @@ export class NoteManager {
             if (p.middlePointOrNot) middleNodes.forEach(fadeIn);
         }
 
-        const note = new NoteObject(p.ord, p, endNode, noteNode, startNode, middleNodes, this.notePool, this.keyPool);
+        // 落点关键点：endPointOrNot 即显示（与共享 EndNode 的 fadeInEnd 一致，不依赖 trackOn）
+        if (endKeyNode) {
+            const s = endKeyNode.getComponent(Sprite);
+            if (s) tween(s).to(0.05, { color: new Color(255, 255, 255, Math.round(255 * (p.opacity / 255))) }).start();
+        }
+
+        const note = new NoteObject(p.ord, p, endNode, noteNode, startNode, middleNodes, endKeyNode, this.notePool, this.keyPool);
         this.active.push(note);
         return note;
     }

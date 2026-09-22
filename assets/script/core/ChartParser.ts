@@ -3,6 +3,7 @@
 // 以及派生飞行时长(travel)/提前量(lead)，避免下游到处算。
 
 import { RawNoteData, ChartData, NoteKind } from './types';
+import { AngleData } from './AngleData';
 
 export interface ParsedNote {
     ord: number;              // 在数组中的索引
@@ -18,6 +19,7 @@ export interface ParsedNote {
     opacity: number;          // 0~255
     travelMs: number;         // 飞行时长 = endtime - starttime（锁节拍，不可调）
     leadMs: number;           // 启动延迟 = endtime - travel
+    angle?: AngleData;         // 所有 note：方向 α(t) 数据
 }
 
 export interface ParsedChart {
@@ -51,6 +53,7 @@ export function parseNote(raw: RawNoteData, ord: number): ParsedNote {
         opacity: asNumber((raw as any).Opacity ?? (raw as any).opacity, 255),
         travelMs: travel,
         leadMs: lead,
+        angle: new AngleData((raw as any).angle ?? (raw as any).alpha ?? 0),
     };
 }
 

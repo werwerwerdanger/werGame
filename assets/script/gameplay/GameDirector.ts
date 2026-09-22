@@ -11,11 +11,10 @@ import { loadSettings } from '../core/Settings';
 import { ChartData, SettingsData } from '../core/types';
 import { parseChart, ParsedChart, ParsedNote } from '../core/ChartParser';
 import { ScoreSystem } from '../core/ScoreSystem';
-import { JudgeResult, noteSizeScale } from '../core/types';
+import { JudgeResult } from '../core/types';
 import { computeLayoutScale, getLayoutScale } from '../util/layout';
 import { NoteManager } from './NoteManager';
 import { EndNodeManager } from './EndNodeManager';
-import { InputRouter } from './InputRouter';
 import { NoteObject } from './NoteObject';
 import { AudioManager } from '../audio/AudioManager';
 import { HUD } from '../ui/HUD';
@@ -32,7 +31,6 @@ export class GameDirector extends Component {
     private score = new ScoreSystem();
     private noteMgr!: NoteManager;
     private endMgr!: EndNodeManager;
-    private input = new InputRouter();
     private audio!: AudioManager;
     private bgmSource: AudioSource | null = null;
 
@@ -88,12 +86,6 @@ export class GameDirector extends Component {
 
         const pauseBtn = this.node.getChildByName('pause');
         if (pauseBtn) pauseBtn.on(NodeEventType.TOUCH_END, this.togglePause, this);
-
-        if (this.settings.playMode === 'key') {
-            this.input.onTouch((ep) => this.onEndpointTouch(ep));
-            this.input.buildDefaultMap();
-            this.input.enable();
-        }
     }
 
     private loadChart(): Promise<ChartData> {
@@ -123,7 +115,7 @@ export class GameDirector extends Component {
                 this.endMgr.bindTouch(p.endpointname, (ep) => this.onEndpointTouch(ep));
             }
 
-            const note = this.noteMgr.spawn(p, endNode, this.settings.trackOn, noteSizeScale(this.settings.noteSize));
+            const note = this.noteMgr.spawn(p, endNode, this.settings.trackOn, 1);
             if (p.touchornot) this.endMgr.register(p, note);
 
             note.startMove(travelSec, () => this.onNoteArrive(p.endpointname, p.ord));

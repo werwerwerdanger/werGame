@@ -1,0 +1,16 @@
+{
+  "MusicMap": [
+    {
+      "Note": "tap",
+      "keypoint": [0, 200, 0, -200],
+      "starttime": 0,
+      "endtime": 500,
+      "Opacity": 255,
+      "touchornot": 0,
+      "startPointOrNot": 1,
+      "middlePointOrNot": 1,
+      "endpointname": "PreviewEnd",
+      "endPointOrNot": 1
+    }
+  ]
+}

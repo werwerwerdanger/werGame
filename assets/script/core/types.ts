@@ -1,5 +1,7 @@
 // 全局类型定义：谱面 / 判定 / 设置。被 core 与 gameplay 各模块共享。
 
+import type { AlphaExpr, AngleData } from './AngleData';
+
 /** 音符种类（与 resources/NoteImage 下目录名、谱面 Note 字段一致，全小写） */
 export type NoteKind = 'tap' | 'flick' | 'drag';
 
@@ -19,6 +21,7 @@ export interface RawNoteData {
     endPointOrNot?: number;       // 是否显示落点关键点
     segmentID?: number;
     note_count?: number;
+    angle?: AlphaExpr;                            // 方向角 α(t)，度；可选，不写默认 0（tap 通常省略）。写法：数(常数) | [t,a,...](扁平关键帧) | {t,a}[](对象关键帧)
 }
 
 /** 解析后的谱面对象 */
@@ -43,16 +46,10 @@ export interface JudgeRecord {
 /** 运行期设置（与 sys.localStorage 键一一对应） */
 export interface SettingsData {
     judgeOffset: number;                          // 判定偏移(ms)，补偿触控延迟
-    noteSize: 'small' | 'normal' | 'large';
     bgDim: number;                                // 背景亮度 0~100
     trackOn: boolean;                             // 轨道(关键点)显示
     musicVol: number;                             // 音乐音量 0~100
     sfxVol: number;                               // 音效音量 0~100
     fxOn: boolean;                                // 特效开关
-    playMode: 'touch' | 'key';                    // 游玩方式
 }
 
-/** 音符显示尺寸系数 */
-export function noteSizeScale(s: SettingsData['noteSize']): number {
-    return s === 'small' ? 0.7 : s === 'large' ? 1.4 : 1.0;
-}
