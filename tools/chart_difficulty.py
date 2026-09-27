@@ -42,18 +42,21 @@ from pathlib import Path
 # ---- score weights (fit these against official lv on a corpus) ----
 W_PEAK_RATE = 2.2    # per 1 tap/s of worst-hand 1s-peak
 W_PEAK_SPEED = 1.0   # per 1 buttons/s of worst-hand peak travel
-W_DENSITY = 0.7      # per 1 note/s overall
+W_READ = 0.7         # per 1 unit of read_load (density + hold span + star path)
 W_BUSY = 2.5         # per 1.0 hold/slide busy-time ratio
 SCORE_MIN, SCORE_MAX = 1.0, 15.5
 
 ALTERNATE_MS = 150   # faster than this -> forced hand alternation
 TOUCH_WEIGHT = 0.3
 BUSY_TAIL_S = 0.05   # small busy tail after each tap
+SLIDE_BUSY_S = 0.10  # stars can be left alone: hand is only busy a fixed moment
+CROSS_PENALTY = 2.0  # cost penalty for reaching across the center (交叉手)
 
 LV_NAMES = {1: "Basic", 2: "Advanced", 3: "Expert", 4: "Master", 5: "ReMaster", 6: "utage"}
 
-# maimai ring: buttons clockwise 1..8, 1 top-left, 2 top-right, 3 right, ...
-BTN_ANGLE = {k: math.radians(-67.5 + (k - 1) * 45) for k in range(1, 9)}
+# maimai ring: buttons clockwise 1..8, 1 top-left of center, 2 top-right of
+# center (they straddle the top), 3/4 right, 5/6 bottom, 7/8 left
+BTN_ANGLE = {k: math.radians(-22.5 + (k - 1) * 45) for k in range(1, 9)}
 
 
 def btn_xy(k: int):
@@ -212,33 +215,41 @@ CURVE_MULT = {"-": 1.0, "x": 1.5, "V": 1.4, "p": 1.6, "q": 1.6, "<": 1.6,
 
 
 class Hand:
-    def __init__(self, name, start):
+    def __init__(self, name, start, home_sign=0):
         self.name = name
         self.pos = start          # (x, y)
         self.free_at = 0.0
+        self.home_sign = home_sign  # -1 = left side, +1 = right side
         self.onsets = []          # (t, pos, is_tap) — slides add an arrival point
         self.speed_samples = []   # (t, speed) injected by slide travel
 
     def cost(self, p, t):
         d = math.dist(self.pos, p)
         dt = max(t - self.free_at, 0.0)
-        return d / max(dt, 0.04)  # hurry factor: distance per available second
+        c = d / max(dt, 0.04)  # hurry factor: distance per available second
+        # 交叉手 penalty: reaching clearly across the center
+        if self.home_sign * p[0] < -0.25:
+            c += CROSS_PENALTY
+        return c
 
 
 def simulate(events):
-    """events: list of (t, kind, pos, busy_until, weight, curve, pos_end). Greedy 2-hand.
+    """events: list of (t, kind, pos, busy_until, weight, curve, pos_end, travel).
+    busy_until = hand occupancy; travel = real slide flight time [a:b].
+    Greedy 2-hand assignment.
 
     Play-style model: onsets faster than ALTERNATE_MS apart are played with
     STRICT hand alternation (交互), regardless of position — that is how humans
     actually play fast streams. Slower onsets go to the cheaper (nearer) hand,
     which reproduces jacks / one-hand patterns correctly. Only when the
     alternation hand is busy (hold/slide) does the other hand take over.
-    Slides (星星): the hand is busy until arrival; its position becomes the
-    slide end point; travel contributes a speed sample (path curve multiplier).
+    Slides (星星): hand is busy only a fixed SLIDE_BUSY_S (the star can be left
+    alone), but the flight (real travel time) still injects a movement-speed
+    sample and the hand ends up at the slide end point.
     """
     events = sorted(events, key=lambda e: e[0])
-    L = Hand("L", btn_xy(7))
-    R = Hand("R", btn_xy(3))
+    L = Hand("L", btn_xy(7), home_sign=-1)
+    R = Hand("R", btn_xy(3), home_sign=+1)
     last_hand = None          # hand that took the previous onset
     i = 0
     n = len(events)
@@ -253,7 +264,7 @@ def simulate(events):
         hands = [L, R]
         if len(group) == 1:
             ev = group[0]
-            t_, kind, p, busy, w, curve, p_end = ev
+            t_, kind, p, busy, w, curve, p_end, trav = ev
             chosen = None
             # strict alternation for fast streams (交互): other hand, if free
             if last_hand is not None and (t - last_t) * 1000 < ALTERNATE_MS:
@@ -270,17 +281,17 @@ def simulate(events):
             chosen.free_at = max(busy, t + BUSY_TAIL_S)
             chosen.onsets.append((t, p, True))
             if p_end is not None:
-                chosen.onsets.append((max(busy, t), p_end, False))
+                chosen.onsets.append((t + trav, p_end, False))
                 mult = CURVE_MULT.get(curve, 1.3)
                 chosen.speed_samples.append(
-                    (t, math.dist(p, p_end) * mult / max(busy - t, 0.05)))
+                    (t, math.dist(p, p_end) * mult / max(trav, 0.05)))
             last_hand = chosen
         else:
             # chord: try both cross-hand assignments (no mutation), keep cheaper
             def try_cost(order, assign):
                 c = 0.0
                 for ev, h in zip(order, assign):
-                    t_, kind, p, busy, w, curve, p_end = ev
+                    t_, kind, p, busy, w, curve, p_end, trav = ev
                     if h.free_at > t + 1e-6:
                         c += 10.0
                     c += h.cost(p, t)
@@ -294,15 +305,15 @@ def simulate(events):
                 if best_cost is None or c < best_cost:
                     best_cost = c
                     best_apply = list(zip(order, assign))
-            for h, (t_, kind, p, busy, w, curve, p_end) in best_apply:
+            for h, (t_, kind, p, busy, w, curve, p_end, trav) in best_apply:
                 h.pos = p_end if p_end is not None else p
                 h.free_at = max(busy, t + BUSY_TAIL_S)
                 h.onsets.append((t, p, True))
                 if p_end is not None:
-                    h.onsets.append((max(busy, t), p_end, False))
+                    h.onsets.append((t + trav, p_end, False))
                     mult = CURVE_MULT.get(curve, 1.3)
                     h.speed_samples.append(
-                        (t, math.dist(p, p_end) * mult / max(busy - t, 0.05)))
+                        (t, math.dist(p, p_end) * mult / max(trav, 0.05)))
             last_hand = best_apply[-1][0]
         last_t = t
         i = j
@@ -358,8 +369,15 @@ def evaluate(events_raw, title):
         else:
             w = 1.0
             p = (a, b)
-        busy = t + dur if dur else t
-        evs.append((t, kind, p, busy, w, curve, p_end))
+        if kind == "hold":
+            busy = t + dur
+        elif kind == "slide":
+            # stars can be left alone: hand busy only a fixed moment; the real
+            # flight time travels separately in the tuple
+            busy = t + SLIDE_BUSY_S
+        else:
+            busy = t
+        evs.append((t, kind, p, busy, w, curve, p_end, dur))
     if not evs:
         return None
     L, R = simulate(evs)
@@ -370,10 +388,19 @@ def evaluate(events_raw, title):
     peak_rate = max(peak_rate_1s(L.onsets), peak_rate_1s(R.onsets))
     ps = max(peak_speed(L), peak_speed(R))
     density = total_w / dur
-    busy_untils = [e[3] for e in evs if e[3] > e[0]]
     busy_time = sum(min(e[3] - e[0], 2.0) for e in evs)
     busy_ratio = min(busy_time / (2 * dur), 1.0)
-    score = (W_PEAK_RATE * peak_rate + W_PEAK_SPEED * ps + W_DENSITY * density
+    # reading burden: everything the eyes must track — plain note density,
+    # hold attention span, and star flight paths (curve-weighted)
+    star_path = 0.0
+    for e in evs:
+        if e[1] == "slide" and e[6] is not None:
+            mult = CURVE_MULT.get(e[5], 1.3)
+            star_path += math.dist(e[2], e[6]) * mult
+    star_load = star_path / dur
+    hold_span = sum(min(e[7], 2.0) for e in evs if e[1] == "hold")
+    read_load = density + hold_span / dur + star_load
+    score = (W_PEAK_RATE * peak_rate + W_PEAK_SPEED * ps + W_READ * read_load
              + W_BUSY * busy_ratio)
     score = max(SCORE_MIN, min(SCORE_MAX, score))
     return {
@@ -383,6 +410,8 @@ def evaluate(events_raw, title):
         "peak_speed": round(ps, 2),
         "density": round(density, 2),
         "busy_ratio": round(busy_ratio, 3),
+        "star_load": round(star_load, 2),
+        "read_load": round(read_load, 2),
         "notes": len(evs),
         "duration_s": round(dur, 1),
     }
