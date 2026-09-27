@@ -30,6 +30,7 @@ Output layout:
 
 import argparse
 import json
+import re
 import sys
 import time
 import urllib.request
@@ -70,16 +71,14 @@ def http_get(url: str, binary: bool = False):
 
 
 def versionid_of(entry: dict) -> str | None:
-    """Extract versionid from the track.mp3 URL inside a specs.json entry."""
+    """Extract versionid from the track.mp3 URL inside a specs.json entry.
+
+    URL shape: https://astrodx-charts*.saop.cc/<versionid>/<shortid>/track.mp3
+    """
     for f in entry.get("files", []):
-        url = f.get("url", "")
-        marker = "astrodx-charts"
-        if f.get("name") == "track.mp3" and marker in url:
-            # .../<host>/<versionid>/<shortid>/track.mp3
-            rest = url.split(marker, 1)[1].lstrip("/")
-            parts = rest.split("/")
-            if len(parts) >= 2:
-                return parts[0]
+        m = re.match(r"https://astrodx-charts[^/]+/(\d+)/\d+/", f.get("url", ""))
+        if m:
+            return m.group(1)
     return None
 
 
