@@ -219,10 +219,18 @@ class Hand:
 
 
 def simulate(events):
-    """events: list of (t, kind, pos, busy_until, weight). Greedy two-hand assignment."""
+    """events: list of (t, kind, pos, busy_until, weight). Greedy two-hand assignment.
+
+    Play-style model: onsets faster than ALTERNATE_MS apart are played with
+    STRICT hand alternation (交互), regardless of position — that is how humans
+    actually play fast streams. Slower onsets go to the cheaper (nearer) hand,
+    which reproduces jacks / one-hand patterns correctly. Only when the
+    alternation hand is busy (hold/slide) does the other hand take over.
+    """
     events = sorted(events, key=lambda e: e[0])
     L = Hand("L", btn_xy(7))
     R = Hand("R", btn_xy(3))
+    last_hand = None          # hand that took the previous onset
     i = 0
     n = len(events)
     last_t = None
@@ -236,19 +244,22 @@ def simulate(events):
         hands = [L, R]
         if len(group) == 1:
             t_, kind, p, busy, w = group[0]
-            force_alt = last_t is not None and (t - last_t) * 1000 < ALTERNATE_MS
-            cand = [h for h in hands if h.free_at <= t + 1e-6]
-            if force_alt and len(cand) == 2:
-                # alternate: pick the hand NOT used by a same-position neighbour is
-                # overkill; simply pick cheaper of the two, alternating tie-break
-                chosen = min(cand, key=lambda h: h.cost(p, t))
-            elif cand:
-                chosen = min(cand, key=lambda h: h.cost(p, t))
-            else:
-                chosen = min(hands, key=lambda h: h.free_at)
+            chosen = None
+            # strict alternation for fast streams (交互): other hand, if free
+            if last_hand is not None and (t - last_t) * 1000 < ALTERNATE_MS:
+                other = R if last_hand is L else L
+                if other.free_at <= t + 1e-6:
+                    chosen = other
+            if chosen is None:
+                cand = [h for h in hands if h.free_at <= t + 1e-6]
+                if cand:
+                    chosen = min(cand, key=lambda h: h.cost(p, t))
+                else:
+                    chosen = min(hands, key=lambda h: h.free_at)
             chosen.pos = p
             chosen.free_at = max(busy, t + BUSY_TAIL_S)
             chosen.onsets.append((t, p))
+            last_hand = chosen
         else:
             # chord: try both cross-hand assignments (no mutation), keep cheaper
             def try_cost(order, assign):
@@ -272,6 +283,7 @@ def simulate(events):
                 h.pos = p
                 h.free_at = max(busy, t + BUSY_TAIL_S)
                 h.onsets.append((t, p))
+            last_hand = best_apply[-1][0]
         last_t = t
         i = j
     return L, R
