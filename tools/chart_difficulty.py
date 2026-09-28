@@ -24,7 +24,7 @@ so you can fit the weights on a scraped corpus later.
 
 Supported inputs (auto-detected per file):
   * simai maidata.txt  (AstroDX dumps; taps, chords `3/4`, holds `(1){4}`,
-    slides `3-6[4:3]`, touch notes weighted at 30%)
+    slides `3-6[4:3]`; touch notes excluded — guidance only)
   * this project's MusicMap.json  (hand = sign of x, target = last keypoint)
 
 Usage:
@@ -47,7 +47,7 @@ W_BUSY = 2.5         # per 1.0 hold/slide busy-time ratio
 SCORE_MIN, SCORE_MAX = 1.0, 100.0  # raw scale — report linearly fits to official lv
 
 ALTERNATE_MS = 150   # faster than this -> forced hand alternation
-TOUCH_WEIGHT = 0.3
+TOUCH_WEIGHT = 0.0   # unused: touches are excluded from difficulty entirely
 BUSY_TAIL_S = 0.05   # small busy tail after each tap
 SLIDE_BUSY_S = 0.10  # stars can be left alone: hand is only busy a fixed moment
 CROSS_PENALTY = 2.0  # cost penalty for reaching across the center (交叉手)
@@ -381,12 +381,13 @@ def evaluate(events_raw, title):
     evs = []
     for raw in events_raw:
         t, kind, a, b, dur = raw[:5]
+        if kind == "touch":
+            # touches are guidance / rest-section flavour (引导+彩休), they add
+            # no judgement pressure — excluded from difficulty entirely
+            continue
         curve = raw[5] if len(raw) > 5 else ""
         p_end = None
-        if kind in ("touch",):
-            w = TOUCH_WEIGHT
-            p = btn_xy(8)  # touches sit near center-ish; rough
-        elif kind == "map":
+        if kind == "map":
             w = 1.0
             p = (a, b)
         elif isinstance(a, int) and 1 <= a <= 8:
