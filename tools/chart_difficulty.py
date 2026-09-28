@@ -305,7 +305,8 @@ def simulate(events):
                 if best_cost is None or c < best_cost:
                     best_cost = c
                     best_apply = list(zip(order, assign))
-            for h, (t_, kind, p, busy, w, curve, p_end, trav) in best_apply:
+            for ev, h in best_apply:
+                t_, kind, p, busy, w, curve, p_end, trav = ev
                 h.pos = p_end if p_end is not None else p
                 h.free_at = max(busy, t + BUSY_TAIL_S)
                 h.onsets.append((t, p, True))
@@ -314,7 +315,7 @@ def simulate(events):
                     mult = CURVE_MULT.get(curve, 1.3)
                     h.speed_samples.append(
                         (t, math.dist(p, p_end) * mult / max(trav, 0.05)))
-            last_hand = best_apply[-1][0]
+            last_hand = best_apply[-1][1]
         last_t = t
         i = j
     return L, R
@@ -336,15 +337,19 @@ def peak_rate_1s(onsets):
 
 
 def peak_speed(hand):
+    """Peak same-hand tap-to-tap travel speed (buttons/s). Slide flights are
+    NOT included here — their visual burden is counted in read_load; adding
+    them here lets short fast slides (dist/0.05s clamp = 40+) blow up the
+    metric and pin every score at the cap."""
     best = 0.0
     onsets = hand.onsets
     for a, b in zip(onsets, onsets[1:]):
+        if not (a[2] and b[2]):
+            continue
         dt = b[0] - a[0]
         if dt < 0.05 or dt > 2.0:
             continue
         best = max(best, math.dist(a[1], b[1]) / dt)
-    for _, v in hand.speed_samples:
-        best = max(best, v)
     return best
 
 
