@@ -44,7 +44,7 @@ W_PEAK_RATE = 2.2    # per 1 tap/s of worst-hand 1s-peak
 W_PEAK_SPEED = 1.0   # per 1 buttons/s of worst-hand peak travel
 W_READ = 0.7         # per 1 unit of read_load (density + hold span + star path)
 W_BUSY = 2.5         # per 1.0 hold/slide busy-time ratio
-SCORE_MIN, SCORE_MAX = 1.0, 15.5
+SCORE_MIN, SCORE_MAX = 1.0, 100.0  # raw scale — report linearly fits to official lv
 
 ALTERNATE_MS = 150   # faster than this -> forced hand alternation
 TOUCH_WEIGHT = 0.3
@@ -65,17 +65,31 @@ def btn_xy(k: int):
 
 
 # ---------------------------------------------------------------- simai parse
-RE_TAP_PAREN = re.compile(r"\((\d)\)(?:\{(\d+)\})?")
-RE_DIV = re.compile(r"^\{(\d+)\}$")
-RE_SLIDE = re.compile(r"^(\d)[A-Za-z<>Vxqpswz-]*(\d)?\[(\d+):(\d+)\]")
-RE_TOUCH = re.compile(r"^([A-Ea-e])(\d)?")
-RE_NUMRUN = re.compile(r"^\d[A-Za-z0-9]*")
+RE_BPM_DIR = re.compile(r"\((\d+(?:\.\d+)?)\)")   # (150) BPM directive
+RE_DIV_DIR = re.compile(r"\{(\d+(?:\.\d+)?)\}")   # {16} division directive
+RE_HS = re.compile(r"<(\d+(?:\.\d+)?)>")          # <2.0> hi-speed marker
+RE_SLIDE_TAIL = re.compile(r"\[(\d+(?:\.\d+)?):(\d+(?:\.\d+)?)\]$")
+RE_SLIDE_TAIL_HASH = re.compile(r"\[(\d*\.?\d+)##(\d*\.?\d+)\]$")
+RE_SLIDE_HEAD = re.compile(r"^(\d)([A-Za-z<>Vxqpswz?~-])(\d?)$")
+RE_HOLD = re.compile(r"^(\d)[a-z]*\{(\d+)\}$")    # 7{8} hold, 8 slots
+RE_TOUCH = re.compile(r"^([A-Ea-e])(\d?)[a-z]*$") # A3 / C / Cf touch note
+RE_WIFI = re.compile(r"^(\d)w")                   # 8w5-2/7/5/3/1[8:1]
 
 
 def parse_maidata(text: str):
-    """Return (bpm, {diff_index: [ (t_sec, kind, start_btn, end_btn_or_None) ]})."""
+    """Return (bpm, {diff_index: [ (t_sec, kind, start_btn, end_btn_or_None, dur[, curve]) ]}).
+
+    Timing model follows the arcade simai parser (maimai-chart-engine):
+      * EVERY comma is one time slot, advancing 4/div beats — commas are the
+        rhythmic grid, NOT measure separators; empty slots just advance time.
+      * {div} / (bpm) / <hs> directives take effect in place and consume no
+        slot; measure boundaries emerge from cumulative beats.
+      * slide [n:m] duration = m/n of one measure (NOT m/n beats).
+      * simultaneous notes share a slot, joined by `/`; adjacent digits in a
+        group are a chord (all taps at the same instant).
+    """
     bpm = None
-    m = re.search(r"&wholebpm=\s*([0-9.]+)", text)
+    m = re.search(r"&(?:whole)?bpm\s*=\s*([0-9.]+)", text)
     if m:
         bpm = float(m.group(1))
     # collect &inote_N= blocks (multi-line, until next '&')
@@ -90,104 +104,113 @@ def parse_maidata(text: str):
             cur_key = None
         elif cur_key is not None:
             inotes[cur_key].append(line)
-    if bpm is None:  # fall back to first (BPM) token anywhere
+    if bpm is None:  # fall back to first (bpm) directive anywhere
         for v in inotes.values():
-            m = re.search(r"\((\d{2,3})\)", ",".join(v))
+            m = RE_BPM_DIR.search(",".join(v))
             if m:
                 bpm = float(m.group(1))
                 break
     if not bpm:
         raise ValueError("no BPM found")
-    spb = 60.0 / bpm          # seconds per beat
-    bar = 4 * spb             # seconds per measure
     out = {}
     for key, lines in inotes.items():
-        events = []
         body = "\n".join(lines)
-        measures = body.split(",")   # comma ends a measure
-        div = 4
-        t0 = 0.0
-        for mi, mtext in enumerate(measures):
-            mt = mtext.strip().replace(" ", "")
-            if not mt:
-                t0 += bar
-                continue
-            dm = RE_DIV.match(mt)
-            if dm:                       # standalone {n} = division directive
-                div = max(1, int(dm.group(1)))
-                t0 += bar
-                continue
-            slot = 0
-            i = 0
-            n = len(mt)
-            while i < n:
-                c = mt[i]
-                if c == "{":            # division directive inside measure
-                    dm = re.match(r"\{(\d+)\}", mt[i:])
-                    if dm:
-                        div = max(1, int(dm.group(1)))
-                        i += dm.end()
-                        continue
-                    i += 1
-                    continue
-                if c == "(":            # tap / hold (paren form)
-                    tm = RE_TAP_PAREN.match(mt, i)
-                    if tm:
-                        # multi-digit like (120) is a BPM directive, not a tap
-                        dm2 = re.match(r"\((\d+)\)", mt[tm.start():])
-                        if dm2 and len(dm2.group(1)) > 1:
-                            i = tm.end()
-                            continue
-                        btn = int(tm.group(1))
-                        dur = int(tm.group(2) or 0) * bar / div
-                        events.append((t0 + slot * bar / div, "hold" if dur else "tap", btn, None, dur))
-                        slot += 1
-                        i = tm.end()
-                        continue
-                    i += 1
-                    continue
-                if c == "/":            # chord separator: group members share a slot
-                    i += 1
-                    continue
-                if c in "12345678":
-                    # slide first: digit + curve chars (+ end digit) + [a:b]
-                    sm = re.match(r"(\d)([A-Za-z<>Vxqpswz-]*)(\d)?\[(\d+):(\d+)\]", mt[i:])
-                    if sm:
-                        a_, b_ = int(sm.group(4)), int(sm.group(5))
-                        dur = (b_ / a_) * spb
-                        s_btn = int(sm.group(1))
-                        e_btn = int(sm.group(3)) if sm.group(3) else ((s_btn + 3) % 8) + 1
-                        events.append((t0 + slot * bar / div, "slide", s_btn, e_btn, dur,
-                                       (sm.group(2) or "-")[:1]))
-                        slot += 1
-                        i += sm.end()
-                        continue
-                    run = RE_NUMRUN.match(mt, i)
-                    runtxt = run.group(0) if run else c
-                    rest = mt[run.end():] if run else ""
-                    if rest.startswith("{"):        # bare hold 7{8}
-                        hm = re.match(r"\{(\d+)\}", rest)
-                        if hm:
-                            dur = int(hm.group(1)) * bar / div
-                            events.append((t0 + slot * bar / div, "hold", int(runtxt[0]), None, dur))
-                            slot += 1
-                            i = run.end() + hm.end()
-                            continue
-                    # plain tap (maybe with modifiers b/m/f/…)
-                    events.append((t0 + slot * bar / div, "tap", int(runtxt[0]), None, 0.0))
-                    slot += 1
-                    i = run.end() if run else i + 1
-                    continue
-                if c in "ABCDEabcde":   # touch note
-                    tm = RE_TOUCH.match(mt, i)
-                    events.append((t0 + slot * bar / div, "touch", 0, None, 0.0))
-                    slot += 1
-                    i = tm.end() if tm else i + 1
-                    continue
-                i += 1                  # skip unknown chars
-            t0 += bar
+        body = re.sub(r"//[^\n]*", "", body)  # strip simai comments
+        events = []
+        div = 4.0
+        bcur = bpm
+        ms = 0.0
+        for chunk in body.split(","):
+            for dm in RE_BPM_DIR.finditer(chunk):
+                bcur = float(dm.group(1))
+            for dm in RE_DIV_DIR.finditer(chunk):
+                div = max(1.0, float(dm.group(1)))
+            # strip directives so their digits never become taps
+            c = re.sub(r"\([^)]*\)|\{[^}]*\}", "", chunk)
+            c = RE_HS.sub("", c).strip()
+            spb = 60.0 / bcur
+            if c:
+                t = ms
+                if RE_WIFI.match(c) and RE_SLIDE_TAIL.search(c):
+                    # wifi: one star fanning out; treat as a single wide slide
+                    tail = RE_SLIDE_TAIL.search(c)
+                    a_, b_ = tail.groups()
+                    dur = (float(b_) / float(a_)) * 4.0 * spb
+                    s_btn = int(c[0])
+                    nums = re.findall(r"\d", c[: tail.start()])
+                    e_btn = int(nums[-1]) if nums else ((s_btn + 3) % 8) + 1
+                    events.append((t, "slide", s_btn, e_btn, dur, "w"))
+                else:
+                    for g in c.split("/"):
+                        g = g.strip()
+                        if g:
+                            _emit_group(g, t, div, spb, events)
+            ms += (4.0 / div) * spb
         out[key] = events
     return bpm, out
+
+
+def _match_slide_head(head: str):
+    """Return (start_btn, curve, end_btn_or_None) for a slide head, else None."""
+    hm = RE_SLIDE_HEAD.match(head)
+    if hm:
+        return (int(hm.group(1)), hm.group(2),
+                int(hm.group(3)) if hm.group(3) else None)
+    wm = re.match(r"^(\d)\??w(\d)$", head)  # 4w8 / 4?w8 wifi
+    if wm:
+        return int(wm.group(1)), "w", int(wm.group(2))
+    return None
+
+
+def _emit_group(g: str, t: float, div: float, spb: float, events: list):
+    """Emit event tuples for one simultaneous group at time t."""
+    # utage tails like [0.2##0.8]: beat positions start##end -> dur = end-start
+    um = RE_SLIDE_TAIL_HASH.search(g)
+    if um:
+        hm = _match_slide_head(g[: um.start()])
+        if hm:
+            s_btn, curve, e_btn = hm
+            dur = max(float(um.group(2)) - float(um.group(1)), 0.05) * spb
+            if e_btn is None:
+                e_btn = ((s_btn + 3) % 8) + 1
+            if curve == "h":
+                events.append((t, "hold", s_btn, None, dur))
+            else:
+                events.append((t, "slide", s_btn, e_btn, dur,
+                               curve if curve != "?" else "-"))
+            return
+    sm = RE_SLIDE_TAIL.search(g)
+    if sm:
+        hm = _match_slide_head(g[: sm.start()])
+        if hm:
+            s_btn, curve, e_btn = hm
+            a_, b_ = float(sm.group(1)), float(sm.group(2))
+            dur = (b_ / a_) * 4.0 * spb  # [n:m] = m/n of a measure
+            # 'h' is the hold marker (2h[1:1] = hold one measure), not a curve
+            if curve == "h":
+                events.append((t, "hold", s_btn, None, dur))
+                return
+            if e_btn is None:
+                e_btn = ((s_btn + 3) % 8) + 1
+            events.append((t, "slide", s_btn, e_btn, dur,
+                           curve if curve != "?" else "-"))
+            return
+    hm = RE_HOLD.match(g)
+    if hm:
+        dur = int(hm.group(2)) * (4.0 / div) * spb
+        events.append((t, "hold", int(hm.group(1)), None, dur))
+        return
+    if re.match(r"^\d[a-z]?$", g) and g.endswith("h"):
+        # bare hold without duration: give it one slot
+        events.append((t, "hold", int(g[0]), None, (4.0 / div) * spb))
+        return
+    if not g[0].isdigit() and RE_TOUCH.match(g):
+        events.append((t, "touch", 0, None, 0.0))
+        return
+    # taps: adjacent digits = chord (same instant); letters are modifiers
+    for ch in g:
+        if ch in "12345678":
+            events.append((t, "tap", int(ch), None, 0.0))
 
 
 # ---------------------------------------------------------- MusicMap.json parse
@@ -377,9 +400,10 @@ def evaluate(events_raw, title):
         if kind == "hold":
             busy = t + dur
         elif kind == "slide":
-            # stars can be left alone: hand busy only a fixed moment; the real
-            # flight time travels separately in the tuple
-            busy = t + SLIDE_BUSY_S
+            # stars occupy the tapping hand during the flight (capped at 2s
+            # for pathological long slides); "leave the star" nuance lives in
+            # the cap, the flight itself is real hand load for most players
+            busy = t + min(dur, 2.0)
         else:
             busy = t
         evs.append((t, kind, p, busy, w, curve, p_end, dur))
