@@ -70,7 +70,8 @@ RE_DIV_DIR = re.compile(r"\{(\d+(?:\.\d+)?)\}")   # {16} division directive
 RE_HS = re.compile(r"<(\d+(?:\.\d+)?)>")          # <2.0> hi-speed marker
 RE_SLIDE_TAIL = re.compile(r"\[(\d+(?:\.\d+)?):(\d+(?:\.\d+)?)\]$")
 RE_SLIDE_TAIL_HASH = re.compile(r"\[(\d*\.?\d+)##(\d*\.?\d+)\]$")
-RE_SLIDE_HEAD = re.compile(r"^(\d)([A-Za-z<>Vxqpswz?~-])(\d?)$")
+# curve may be multi-char: 7x-5 (x then straight), 5hx (hold+break-x), 3?
+RE_SLIDE_HEAD = re.compile(r"^(\d)([A-Za-z<>Vxqpswz?~-]+)(\d?)$")
 RE_HOLD = re.compile(r"^(\d)[a-z]*\{(\d+)\}$")    # 7{8} hold, 8 slots
 RE_TOUCH = re.compile(r"^([A-Ea-e])(\d?)[a-z]*$") # A3 / C / Cf touch note
 RE_WIFI = re.compile(r"^(\d)w")                   # 8w5-2/7/5/3/1[8:1]
@@ -151,14 +152,18 @@ def parse_maidata(text: str):
 
 
 def _match_slide_head(head: str):
-    """Return (start_btn, curve, end_btn_or_None) for a slide head, else None."""
+    """Return (start_btn, curve_char, end_btn_or_None, is_hold) else None.
+
+    curve may be multi-char: 'x-' (EX diamond + straight), 'hx' (hold +
+    break-diamond). A head containing 'h' is a hold, e.g. 2h[1:1] / 5hx[2:1]."""
     hm = RE_SLIDE_HEAD.match(head)
     if hm:
-        return (int(hm.group(1)), hm.group(2),
-                int(hm.group(3)) if hm.group(3) else None)
+        cs = hm.group(2)
+        return (int(hm.group(1)), cs[0],
+                int(hm.group(3)) if hm.group(3) else None, "h" in cs)
     wm = re.match(r"^(\d)\??w(\d)$", head)  # 4w8 / 4?w8 wifi
     if wm:
-        return int(wm.group(1)), "w", int(wm.group(2))
+        return int(wm.group(1)), "w", int(wm.group(2)), False
     return None
 
 
@@ -169,11 +174,11 @@ def _emit_group(g: str, t: float, div: float, spb: float, events: list):
     if um:
         hm = _match_slide_head(g[: um.start()])
         if hm:
-            s_btn, curve, e_btn = hm
+            s_btn, curve, e_btn, is_hold = hm
             dur = max(float(um.group(2)) - float(um.group(1)), 0.05) * spb
             if e_btn is None:
                 e_btn = ((s_btn + 3) % 8) + 1
-            if curve == "h":
+            if is_hold:
                 events.append((t, "hold", s_btn, None, dur))
             else:
                 events.append((t, "slide", s_btn, e_btn, dur,
@@ -183,17 +188,16 @@ def _emit_group(g: str, t: float, div: float, spb: float, events: list):
     if sm:
         hm = _match_slide_head(g[: sm.start()])
         if hm:
-            s_btn, curve, e_btn = hm
+            s_btn, curve, e_btn, is_hold = hm
             a_, b_ = float(sm.group(1)), float(sm.group(2))
             dur = (b_ / a_) * 4.0 * spb  # [n:m] = m/n of a measure
-            # 'h' is the hold marker (2h[1:1] = hold one measure), not a curve
-            if curve == "h":
-                events.append((t, "hold", s_btn, None, dur))
-                return
             if e_btn is None:
                 e_btn = ((s_btn + 3) % 8) + 1
-            events.append((t, "slide", s_btn, e_btn, dur,
-                           curve if curve != "?" else "-"))
+            if is_hold:
+                events.append((t, "hold", s_btn, None, dur))
+            else:
+                events.append((t, "slide", s_btn, e_btn, dur,
+                               curve if curve != "?" else "-"))
             return
     hm = RE_HOLD.match(g)
     if hm:
